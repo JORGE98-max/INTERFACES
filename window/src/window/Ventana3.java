@@ -46,44 +46,73 @@ public class Ventana3 {
 		frame.setBounds(100, 100, 682, 450);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
-		
+
 		JLabel lblNewLabel = new JLabel("NUMERO 1");
 		lblNewLabel.setBounds(68, 65, 139, 14);
 		frame.getContentPane().add(lblNewLabel);
-		
+
 		JLabel lblNewLabel_1 = new JLabel("NUMERO 2");
 		lblNewLabel_1.setBounds(68, 129, 139, 14);
 		frame.getContentPane().add(lblNewLabel_1);
-		
+
 		JLabel lblNewLabel_2 = new JLabel("New label");
 		lblNewLabel_2.setBounds(451, 95, 46, 14);
 		frame.getContentPane().add(lblNewLabel_2);
-		
+
 		textField = new JTextField();
 		textField.setBounds(255, 62, 86, 20);
 		frame.getContentPane().add(textField);
 		textField.setColumns(10);
-		
+
 		textField_1 = new JTextField();
 		textField_1.setBounds(255, 126, 86, 20);
 		frame.getContentPane().add(textField_1);
 		textField_1.setColumns(10);
-		
+
 		JButton btnNewButton = new JButton("SUMAR");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				int n1 = Integer.parseInt(textField.getText());
 				int n2 = Integer.parseInt(textField_1.getText());
-				
+
 				int suma = n1 + n2;
-				
+
 				lblNewLabel_2.setText(String.valueOf(suma));
 			}
 		});
 		btnNewButton.setBounds(252, 196, 89, 23);
 		frame.getContentPane().add(btnNewButton);
-		
-		
+
+		JButton btnNewButton_1 = new JButton("RESTA");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+
+				int n1 = Integer.parseInt(textField.getText());
+				int n2 = Integer.parseInt(textField_1.getText());
+
+				int suma = n1 - n2;
+
+				lblNewLabel_2.setText(String.valueOf(suma));
+			}
+
+		});
+		btnNewButton_1.setBounds(252, 230, 89, 23);
+		frame.getContentPane().add(btnNewButton_1);
+
+		JButton btnNewButton_2 = new JButton("MULTIPLICACI\u00D3N");
+		btnNewButton_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				int n1 = Integer.parseInt(textField.getText());
+				int n2 = Integer.parseInt(textField_1.getText());
+
+				int suma = n1 * n2;
+
+				lblNewLabel_2.setText(String.valueOf(suma));
+			}
+		});
+		btnNewButton_2.setBounds(170, 264, 256, 23);
+		frame.getContentPane().add(btnNewButton_2);
+
 	}
 
 }
