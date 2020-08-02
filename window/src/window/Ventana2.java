@@ -9,6 +9,9 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JPasswordField;
+import javax.swing.ImageIcon;
+import java.awt.Color;
+import java.awt.Font;
 
 public class Ventana2 {
 
@@ -58,10 +61,14 @@ public class Ventana2 {
 		textField.setColumns(10);
 
 		JLabel lblNewLabel = new JLabel("USUARIO");
+		lblNewLabel.setForeground(Color.WHITE);
 		lblNewLabel.setBounds(276, 110, 72, 14);
 		frame.getContentPane().add(lblNewLabel);
 
 		JLabel lblNewLabel_1 = new JLabel("CONTRASE\u00D1A");
+		lblNewLabel_1.setFont(new Font("Lucida Sans Typewriter", Font.PLAIN, 14));
+		lblNewLabel_1.setForeground(Color.WHITE);
+		lblNewLabel_1.setBackground(Color.WHITE);
 		lblNewLabel_1.setBounds(262, 166, 86, 14);
 		frame.getContentPane().add(lblNewLabel_1);
 
@@ -99,6 +106,11 @@ public class Ventana2 {
 		});
 		btnNewButton.setBounds(259, 236, 89, 23);
 		frame.getContentPane().add(btnNewButton);
+		
+		JLabel lblNewLabel_4 = new JLabel("");
+		lblNewLabel_4.setIcon(new ImageIcon("C:\\Users\\Jorge Corimanya\\Pictures\\login-bg.png"));
+		lblNewLabel_4.setBounds(0, 0, 590, 371);
+		frame.getContentPane().add(lblNewLabel_4);
 		
 		
 	}
