@@ -4,6 +4,7 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.ImageIcon;
 import javax.swing.JTextField;
 import java.awt.Font;
@@ -31,10 +32,10 @@ public class BIBLIOTECA {
 	private JTextField textField_4;
 	private JLabel lblNewLabel_8;
 	private JTextField textField_5;
-	private JLabel lblNewLabel_6;
 	private JLabel lblNewLabel_9;
 	private JLabel lblNewLabel_5;
 	private JLabel lblNewLabel_10;
+	private JLabel lblNewLabel_6;
 
 	/**
 	 * Launch the application.
@@ -65,7 +66,7 @@ public class BIBLIOTECA {
 	private void initialize() {
 		frame = new JFrame();
 		frame.getContentPane().setBackground(Color.DARK_GRAY);
-		frame.setBounds(100, 100, 944, 475);
+		frame.setBounds(100, 100, 1083, 475);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
@@ -124,7 +125,7 @@ public class BIBLIOTECA {
 		textField_5.setColumns(10);
 		
 		JTextArea textArea = new JTextArea();
-		textArea.setBounds(510, 323, 332, 88);
+		textArea.setBounds(510, 323, 374, 88);
 		frame.getContentPane().add(textArea);
 		
 		JLabel lblNewLabel_1 = new JLabel("INGRESE  C\u00D3DIGO DEL LIBRO");
@@ -157,6 +158,12 @@ public class BIBLIOTECA {
 					ResultSet resultSet4 = statement4.executeQuery("select Título from biblio2 where Codigo="+id);
 					ResultSet resultSet5 = statement5.executeQuery("select Stock from biblio2 where Codigo="+id);
 					
+					
+						dispose();
+						JOptionPane.showMessageDialog(null,"Buena Eleccion","INGRESASTE",JOptionPane.INFORMATION_MESSAGE);
+						
+						
+					
 					if(resultSet.next()==true) {
 						textField_1.setText(resultSet.getString("Autor"));
 					}
@@ -177,10 +184,7 @@ public class BIBLIOTECA {
 						textField_5.setText(resultSet5.getString("Stock"));
 					}
 					
-					
-					
-					
-					
+						
 				} catch (Exception e) {
 					
 					
@@ -207,11 +211,6 @@ public class BIBLIOTECA {
 		lblNewLabel_8.setBounds(653, 279, 71, 14);
 		frame.getContentPane().add(lblNewLabel_8);
 		
-		lblNewLabel_6 = new JLabel("New label");
-		lblNewLabel_6.setIcon(new ImageIcon("C:\\Users\\Jorge Corimanya\\Pictures\\XUYWTFS7QREOFFTYRKBVZWUGNQ.jpg"));
-		lblNewLabel_6.setBounds(394, 11, 513, 414);
-		frame.getContentPane().add(lblNewLabel_6);
-		
 		lblNewLabel_9 = new JLabel("998325694");
 		lblNewLabel_9.setFont(new Font("Tahoma", Font.BOLD, 14));
 		lblNewLabel_9.setForeground(Color.WHITE);
@@ -228,6 +227,27 @@ public class BIBLIOTECA {
 		lblNewLabel_10.setIcon(new ImageIcon("C:\\Users\\Jorge Corimanya\\Pictures\\957960794afefb5cd4aa39d3fdd0a0c8.jpg"));
 		lblNewLabel_10.setBounds(10, 11, 374, 414);
 		frame.getContentPane().add(lblNewLabel_10);
+		
+		JButton btnNewButton_1 = new JButton("COMPRAR");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				pago p = new pago();
+				p.setVisible(true);
+			}
+		});
+		btnNewButton_1.setBounds(931, 388, 115, 23);
+		frame.getContentPane().add(btnNewButton_1);
+		
+		lblNewLabel_6 = new JLabel("");
+		lblNewLabel_6.setIcon(new ImageIcon("C:\\Users\\Jorge Corimanya\\Pictures\\XUYWTFS7QREOFFTYRKBVZWUGNQ.jpg"));
+		lblNewLabel_6.setBounds(394, 11, 663, 414);
+		frame.getContentPane().add(lblNewLabel_6);
 			
+	}
+
+	protected void dispose() {
+		// TODO Auto-generated method stub
+		
 	}
 }
